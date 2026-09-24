@@ -267,13 +267,14 @@ GameObject:
   m_Component:
   - component: {fileID: 136267945}
   - component: {fileID: 136267946}
+  - component: {fileID: 136267947}
   m_Layer: 0
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &136267945
 Transform:
   m_ObjectHideFlags: 0
@@ -335,10 +336,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2, y: 1.5}
-      - {x: 0, y: 0}
-      - {x: 2, y: -1.5}
+    - - {x: 0, y: 0}
+      - {x: 0.5, y: 0.4}
+      - {x: 1.5, y: 1}
+      - {x: 1.5, y: -1}
+      - {x: 0.5, y: -0.4}
   m_UseDelaunayMesh: 1
+--- !u!114 &136267947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136267944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec0f576d25a61729b4890a0363ad65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAreaScript
 --- !u!1 &204132857
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +901,7 @@ GameObject:
   - component: {fileID: 901013975}
   - component: {fileID: 901013974}
   - component: {fileID: 901013978}
+  - component: {fileID: 901013979}
   m_Layer: 0
   m_Name: Player
   m_TagString: 2D
@@ -983,8 +999,7 @@ MonoBehaviour:
   rb: {fileID: 901013977}
   moveAction: {fileID: 823625257753494923, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
   jumpAction: {fileID: -2563499872362730661, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
-  changeModeAction: {fileID: 8476141675825874635, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
-  moveSpeed: 0.2
+  moveSpeed: 10
   jumpSpeed: 20
   layerMask:
     serializedVersion: 2
@@ -1097,6 +1112,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LogicScript
   player: {fileID: 901013970}
+  changeModeAction: {fileID: 8476141675825874635, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
+--- !u!114 &901013979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901013970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08e66c6cf3bf1ccfac7336f1581ff67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackAction: {fileID: 1304854589085234981, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
 --- !u!1 &972731334
 GameObject:
   m_ObjectHideFlags: 0

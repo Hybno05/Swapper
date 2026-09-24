@@ -10,7 +10,7 @@
                     "name": "Movement",
                     "type": "PassThrough",
                     "id": "0a4752f9-8f33-44b9-ab5e-63d9105bc7c3",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -113,7 +113,7 @@
                 {
                     "name": "",
                     "id": "ce04fd54-82da-48eb-90a8-44e111c5c5a9",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

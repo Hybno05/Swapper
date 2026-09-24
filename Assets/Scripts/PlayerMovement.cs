@@ -7,7 +7,6 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
-    public InputActionReference changeModeAction;
     public float moveSpeed;
     public float jumpSpeed;
     public LayerMask layerMask;
@@ -28,7 +27,7 @@ public class PlayerScript : MonoBehaviour
             case "TopDown":
                 rb.linearVelocity = new Vector2(0,0);
                 rb.gravityScale = 0;
-                gameObject.transform.position += new Vector3(_movement.x * moveSpeed, _movement.y * moveSpeed, 0);
+                gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, _movement.y * moveSpeed * Time.deltaTime, 0);
                 break;
             
             
@@ -38,7 +37,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     Jump();
                 }
-                gameObject.transform.position += new Vector3(_movement.x * moveSpeed, 0,0); 
+                gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, 0,0); 
                 break;
         }
     }

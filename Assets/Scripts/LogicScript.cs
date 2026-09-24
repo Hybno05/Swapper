@@ -1,12 +1,22 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LogicScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject player;
+    public InputActionReference changeModeAction;
 
-    void changeMode()
+    void Update()
+    {
+        if (changeModeAction.action.WasPressedThisFrame())
+        {
+            ChangeMode();
+        }
+    }
+
+    void ChangeMode()
     {
         switch (player.tag)
         {
