@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerAttack : MonoBehaviour
 {
     public InputActionReference attackAction;
-    private GameObject attackArea = default;
-    private bool _isattacking = false;
+    private GameObject attackArea;
+    private bool _isattacking;
 
-    private float _timeToAttack = 3f;
+    private float _timeToAttack = 1f;
 
     private float timer = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,6 +40,6 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         _isattacking = true;
-        gameObject.SetActive(_isattacking);
+        attackArea.SetActive(_isattacking);
     }
 }

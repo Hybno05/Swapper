@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 public class LogicScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject player;
     public InputActionReference changeModeAction;
 
     void Update()
@@ -18,13 +16,13 @@ public class LogicScript : MonoBehaviour
 
     void ChangeMode()
     {
-        switch (player.tag)
+        switch (gameObject.transform.tag)
         {
             case "2D":
-                player.tag = "TopDown";
+                gameObject.transform.tag = "TopDown";
                 break;
             case "TopDown":
-                player.tag = "2D";
+                gameObject.transform.tag = "2D";
                 break;
         }
     }

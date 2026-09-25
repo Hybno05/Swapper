@@ -338,8 +338,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0, y: 0}
       - {x: 0.5, y: 0.4}
-      - {x: 1.5, y: 1}
-      - {x: 1.5, y: -1}
+      - {x: 1.5, y: 0.8}
+      - {x: 1.5, y: -0.8}
       - {x: 0.5, y: -0.4}
   m_UseDelaunayMesh: 1
 --- !u!114 &136267947
@@ -1111,7 +1111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1440b14778005aa09a56e5da0f4d21b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LogicScript
-  player: {fileID: 901013970}
   changeModeAction: {fileID: 8476141675825874635, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
 --- !u!114 &901013979
 MonoBehaviour:
@@ -1126,6 +1125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   attackAction: {fileID: 1304854589085234981, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
+  _isattacking: 0
 --- !u!1 &972731334
 GameObject:
   m_ObjectHideFlags: 0
