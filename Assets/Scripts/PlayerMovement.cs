@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _movement = moveAction.action.ReadValue<Vector2>();
         switch (transform.tag)
