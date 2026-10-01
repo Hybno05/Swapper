@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -33,12 +34,20 @@ public class PlayerScript : MonoBehaviour
             
             case "2D":
                 rb.gravityScale = 10;
-                if (jumpAction.action.WasPressedThisFrame() && GetIsGrounded())
-                {
-                    Jump();
-                }
+                
                 gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, 0,0); 
                 break;
+        }
+    }
+
+    void Update()
+    {
+        if (transform.CompareTag("2D"))
+        {
+            if (jumpAction.action.WasPressedThisFrame() && GetIsGrounded())
+            {
+                Jump();
+            }
         }
     }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 2D
   - TopDown
+  - Dead
   layers:
   - Default
   - TransparentFX

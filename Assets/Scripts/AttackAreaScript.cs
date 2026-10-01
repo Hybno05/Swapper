@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class AttackAreaScript : MonoBehaviour
 {
     private Camera _camera;
+    public int damage = 10;
 
     private void Start()
     {
@@ -13,7 +14,11 @@ public class AttackAreaScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.name+"Wurde getroffen!");
+        HealthManger health = collision.gameObject.GetComponent<HealthManger>();
+        if (health != null)
+        {
+            health.ReduceHealth(damage);
+        }
     }
 
     private void Update()

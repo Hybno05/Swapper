@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject attackArea;
     private bool _isattacking;
 
-    private float _timeToAttack = 0.5f;
+    private float _timeToAttack = 0.1f;
 
     private float timer = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
+    
 
     private void Attack()
     {
