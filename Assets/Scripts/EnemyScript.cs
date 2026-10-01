@@ -6,6 +6,8 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed;
     public GameObject player; 
     public Rigidbody2D rb;
+    private int followx;
+    private int followy;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -19,7 +21,7 @@ public class EnemyScript : MonoBehaviour
             
             case "2D":
                 rb.gravityScale = 10;
-                transform.position += new Vector3((player.transform.position.x - transform.position.x) * moveSpeed * Time.deltaTime, 0, 0);
+                transform.position += new Vector3((player.transform.position.x - transform.position.x)* moveSpeed * Time.deltaTime, 0, 0);
                 break;
         }
     }
@@ -29,7 +31,6 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.layer != LayerMask.NameToLayer("Ground"))
         {
             //Bei Schaden soll der Player nach hinten geschubst werden
-            collision.rigidbody.linearVelocity = new Vector3((collision.transform.position.x - transform.position.x) * moveSpeed, (collision.transform.position.y - transform.position.y) * moveSpeed, 0);
             HealthManger health = collision.gameObject.GetComponent<HealthManger>();
             health.ReduceHealth(5);
         }

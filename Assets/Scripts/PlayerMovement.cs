@@ -34,7 +34,6 @@ public class PlayerScript : MonoBehaviour
             
             case "2D":
                 rb.gravityScale = 10;
-                
                 gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, 0,0); 
                 break;
         }
