@@ -12,11 +12,14 @@ public class PlayerScript : MonoBehaviour
     public float jumpSpeed;
     public LayerMask layerMask;
     public float maxRange = 1f;
+    private UIScript uiScript;
+    private HealthManger health;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        health = GetComponent<HealthManger>();
+        uiScript = GameObject.Find("LogicManager").GetComponent<UIScript>();
     }
 
     // Update is called once per frame
@@ -41,6 +44,12 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        if (health.GetIsDead())
+        {
+            gameObject.SetActive(false);
+            uiScript.gameOver();
+        }
+
         if (transform.CompareTag("2D"))
         {
             if (jumpAction.action.WasPressedThisFrame() && GetIsGrounded())
@@ -59,4 +68,6 @@ public class PlayerScript : MonoBehaviour
     {
         rb.linearVelocity = Vector2.up * jumpSpeed;
     }
+
+    
 }

@@ -17,4 +17,9 @@ public class HealthManger : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public bool GetIsDead()
+    {
+        return health <= 0;
+    }
 }
