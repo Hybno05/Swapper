@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.PlayerLoop;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -31,16 +30,18 @@ public class PlayerScript : MonoBehaviour
             case "TopDown":
                 rb.linearVelocity = new Vector2(0,0);
                 rb.gravityScale = 0;
-                gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, _movement.y * moveSpeed * Time.deltaTime, 0);
+                transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, _movement.y * moveSpeed * Time.deltaTime,0);
                 break;
             
             
             case "2D":
                 rb.gravityScale = 10;
-                gameObject.transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, 0,0); 
+                transform.position += new Vector3(_movement.x * moveSpeed * Time.deltaTime, 0,0); 
                 break;
         }
+        
     }
+    
 
     void Update()
     {

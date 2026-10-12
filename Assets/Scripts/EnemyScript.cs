@@ -16,11 +16,15 @@ public class EnemyScript : MonoBehaviour
         {
             case "TopDown":
                 rb.gravityScale = 0;
-                transform.position += new Vector3((player.transform.position.x - transform.position.x) * moveSpeed * Time.deltaTime, (player.transform.position.y - transform.position.y) * moveSpeed * Time.deltaTime, 0);
+                moveSpeed = 7.5f;
+                Vector3 velocity = new Vector3((player.transform.position.x - transform.position.x), (player.transform.position.y - transform.position.y), 0);
+                velocity = velocity.normalized * moveSpeed * Time.deltaTime;
+                transform.position += velocity;
             break;
             
             case "2D":
                 rb.gravityScale = 10;
+                moveSpeed = 2f;
                 transform.position += new Vector3((player.transform.position.x - transform.position.x)* moveSpeed * Time.deltaTime, 0, 0);
                 break;
         }

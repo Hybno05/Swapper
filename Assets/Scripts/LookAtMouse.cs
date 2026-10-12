@@ -1,27 +1,17 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AttackAreaScript : MonoBehaviour
+public class LootAtMouse : MonoBehaviour
 {
     private Camera _camera;
-    public int damage = 10;
-
-    private void Start()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
         _camera = Camera.main;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        HealthManger health = collision.gameObject.GetComponent<HealthManger>();
-        if (health != null)
-        {
-            health.ReduceHealth(damage);
-        }
-    }
-
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         Vector3 mousePos =  (Vector2)_camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         float angleRad = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
