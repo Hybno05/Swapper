@@ -1311,6 +1311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fa262733670754c9ffae4cc1ebe4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootAtMouse
+  mousePos: {x: 0, y: 0, z: 0}
 --- !u!1 &901013970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fa262733670754c9ffae4cc1ebe4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LootAtMouse
+  mousePos: {x: 0, y: 0, z: 0}
 --- !u!1 &1663894298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2016936274}
   - component: {fileID: 2016936275}
+  - component: {fileID: 2016936276}
   m_Layer: 0
   m_Name: ArrowSpawn
   m_TagString: Untagged
@@ -2515,7 +2518,7 @@ Transform:
   m_GameObject: {fileID: 2016936273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2533,7 +2536,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca21ffe03eb4ce449af2f8925823a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  arrow: {fileID: 0}
+  lookAtMouse: {fileID: 2016936276}
+  arrow: {fileID: 8338774405883984628, guid: 0617789a85344d74f9aabf76d8d70011, type: 3}
+  shoot: {fileID: 1304854589085234981, guid: 5f439c96ffa43cb97af546b0b89bbd8d, type: 3}
+--- !u!114 &2016936276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016936273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0fa262733670754c9ffae4cc1ebe4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookAtMouse
+  mousePos: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
