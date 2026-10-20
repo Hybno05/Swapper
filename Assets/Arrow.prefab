@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BowScript
   damage: 15
+  destroyLayer:
+    serializedVersion: 2
+    m_Bits: 64

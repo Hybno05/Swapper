@@ -23,9 +23,6 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-
         if (attackAction.action.WasPressedThisFrame())
         {
             weapon = WeaponSwitch.GetCurrentWeapon();

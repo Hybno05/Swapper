@@ -6,30 +6,41 @@ public class BowScript : MonoBehaviour
 {
     public int damage = 15;
     private Vector2 targetPos;
+    private Camera  _camera;
+    public LayerMask destroyLayer;
 
     private void Start()
     {
-        targetPos =  Mouse.current.position.ReadValue();
+        _camera = Camera.main;
+        targetPos =  _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, 10 * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, 10  * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer != LayerMask.GetMask("Ground"))
+        if (collision.gameObject.layer != destroyLayer & collision.gameObject.transform.name != "Player")
         {
-            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            HealthManger health = collision.gameObject.GetComponent<HealthManger>();
+            if (health != null)
+            {
+                health.ReduceHealth(damage);
+                collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            
+        }
+        
+        
+        if(collision.gameObject.layer == destroyLayer){
+            Destroy(this.gameObject);
         }
 
+
+
         
-        HealthManger health = collision.gameObject.GetComponent<HealthManger>();
-        if (health != null)
-        {
-            health.ReduceHealth(damage);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
